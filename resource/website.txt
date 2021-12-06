@@ -1,0 +1,13 @@
+[도움 받은 사이트]
+
+1. https://heekng.tistory.com/64
+	- 셀레니움 서버 다운로드, ChromeDriver 다운로드, 크롤링 하는 방법 설명
+	
+2. https://ko.myservername.com/top-25-selenium-webdriver-commands-that-you-should-know#1_get_Methods
+	- Selenium WebDriver 명령에 대해 설명
+	
+3. https://steadiness-193.tistory.com/121?category=952188
+	- 파이썬으로 설명
+	- 네이버 다음 페이지 넘어가는 방법 설명
+	
+4. https://sacko.tistory.com/15

@@ -1,7 +1,7 @@
 [도움 받은 사이트]
 
 1. https://heekng.tistory.com/64
-	- 셀레니움 서버 다운로드, ChromeDriver 다운로드, 크롤링 하는 방법 설명
+	- 셀레니움 서버 다운로드, ChromeDriver 다운로드, 크롤링 하는 방법 설명, 코드 참고
 	
 2. https://ko.myservername.com/top-25-selenium-webdriver-commands-that-you-should-know#1_get_Methods
 	- Selenium WebDriver 명령에 대해 설명
@@ -11,3 +11,13 @@
 	- 네이버 다음 페이지 넘어가는 방법 설명
 	
 4. https://sacko.tistory.com/15
+
+5. https://teamlab.github.io/jekyllDecent/blog/crawling%20with%20python/Selenium%EC%9C%BC%EB%A1%9C-%EB%84%A4%EC%9D%B4%EB%B2%84-%EC%97%B0%EA%B7%B9-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%81%AC%EB%A1%A4%EB%A7%81%ED%95%98%EA%B8%B0-with-Python
+	- 코드 참고
+	
+6. https://stackoverflow.com/questions/7475449/webdriver-classname-with-space-using-java
+	- 여러 경로 찾는 방법 나와있음
+
+[해보기]
+- https://search.naver.com/search.naver?where=nexearch&sm=tab_etc&qvt=0&query=12%EC%9B%94%205%EC%9D%BC%EC%8B%9C%EC%B2%AD%EB%A5%A0
+- 드라마 시청률 크롤링

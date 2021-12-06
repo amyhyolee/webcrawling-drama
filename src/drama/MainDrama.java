@@ -3,14 +3,12 @@ package drama;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import dao.DramaDao;
-import dto.DramaDto;
-
-
 
 public class MainDrama {
 
@@ -27,10 +25,10 @@ public class MainDrama {
 
 		// 크롬 설정을 담은 객체 생성
 		ChromeOptions options = new ChromeOptions();
-		
+
 		// 브라우저가 눈에 보이지 않고 실행한다.
 		// 설정하지 않으면 크롬 창이 생성되고, 어떻게 진행되는지 확인할 수 있다.
-//		options.addArguments("headless");
+		options.addArguments("headless");
 
 		// 위에서 설정한 옵션은 담은 드라이버 객체 생성
 		// 옵션을 설정하지 않았을 때에는 생략 가능하다.
@@ -38,7 +36,8 @@ public class MainDrama {
 		WebDriver driver = new ChromeDriver(options);
 
 		// 이동을 원하는 url
-		String str = "드라마";
+		// 가끔 드라마 대신 인플루언서가 나오는 경우도 있음.
+		String str = "드라마"; // 방영종료드라마, 방영예정드라마
 		String text = URLEncoder.encode(str, "UTF-8");
 		String url = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=" + text;
 
@@ -51,17 +50,21 @@ public class MainDrama {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 		}
-		
-		DramaDto dto = new DramaDto();
+
+		// 페이지 수 출력
+		String page = driver.findElement(By.className("_total")).getText();
+		int pageNum = Integer.parseInt(page);
+//		System.out.println(pageNum);
+
 		DramaDao dao = new DramaDao();
-		while(dto.isNext()) {
-			dao.getData(driver);
-			dto.setNext(dao.isNext(driver));
-			
+		for (int i = 0; i < pageNum; i++) {
+			dao.getData(driver); // 드라마 제목 출력
+			driver.findElement(By.xpath("//*[@id=\"main_pack\"]/div[2]/div[2]/div/div/div[3]/div/a[2]")).click(); // 다음 페이지 클릭
+
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+			}
 		}
-		
-
-		
-
 	}
 }
